@@ -2,6 +2,14 @@
 import React, { useState } from 'react';
 import Register from './components/Register';
 import Login from './components/Login';
+import axios from 'axios';
+
+interface ImportMetaEnv {
+  VITE_API_URL: string;
+}
+
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+axios.defaults.withCredentials = true;
 
 const App = () => {
     const [loggedInUser, setLoggedInUser] = useState<string|null>(null);

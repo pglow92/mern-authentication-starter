@@ -1,5 +1,5 @@
 // backend/config.js
 module.exports = {
-    mongoURI: 'yourmongourl',
-    jwtSecret: 'hello'
+    mongoURI: process.env.MONGO_URL,
+    jwtSecret: process.env.SECRET
 };
